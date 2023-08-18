@@ -1,0 +1,16 @@
+service: go-serverless
+
+provider:
+  name: aws
+  runtime: go1.x
+
+functions:
+  hello:
+    handler: bin/hello
+    events:
+       - http:
+          path: /hello
+          method: GET
+
+plugins:
+   - serverless-offline
